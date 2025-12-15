@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Items API Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        button.delete {
+            background: #dc3545;
+        }
+        button.delete:hover {
+            background: #c82333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 12px;
+        }
+        .todo-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-item.complete {
+            opacity: 0.7;
+            text-decoration: line-through;
+        }
+        .todo-info {
+            flex: 1;
+        }
+        .todo-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .checkbox {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Todo Items API Test</h1>
+        
+        <!-- GET All Items -->
+        <div class="section">
+            <h2>1. Get All Todo Items</h2>
+            <button onclick="getAllItems()">GET /todoitems</button>
+            <div id="getAllResult" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- GET Item by ID -->
+        <div class="section">
+            <h2>2. Get Todo Item by ID</h2>
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="number" id="getById" value="1" min="1">
+            </div>
+            <button onclick="getItemById()">GET /todoitems/{id}</button>
+            <div id="getByIdResult" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- POST Create Item -->
+        <div class="section">
+            <h2>3. Create New Todo Item (POST)</h2>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="postName" placeholder="Enter todo name">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="postIsComplete" class="checkbox"> Is Complete
+                </label>
+            </div>
+            <button onclick="createItem()">POST /todoitems</button>
+            <div id="postResult" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- PUT Update Item -->
+        <div class="section">
+            <h2>4. Update Todo Item (PUT)</h2>
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="number" id="putId" value="1" min="1">
+            </div>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="putName" placeholder="Enter new name">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="putIsComplete" class="checkbox"> Is Complete
+                </label>
+            </div>
+            <button onclick="updateItem()">PUT /todoitems/{id}</button>
+            <div id="putResult" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- DELETE Item -->
+        <div class="section">
+            <h2>5. Delete Todo Item</h2>
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="number" id="deleteId" value="1" min="1">
+            </div>
+            <button class="delete" onclick="deleteItem()">DELETE /todoitems/{id}</button>
+            <div id="deleteResult" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- Display All Items -->
+        <div class="section">
+            <h2>📋 Current Todo Items</h2>
+            <button onclick="refreshItems()">Refresh List</button>
+            <div id="itemsList"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        async function getAllItems() {
+            try {
+                const response = await fetch(`${API_BASE}/todoitems`);
+                const data = await response.json();
+                document.getElementById('getAllResult').style.display = 'block';
+                document.getElementById('getAllResult').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                refreshItems();
+            } catch (error) {
+                document.getElementById('getAllResult').style.display = 'block';
+                document.getElementById('getAllResult').innerHTML = `<pre style="color:red;">Error: ${error.message}</pre>`;
+            }
+        }
+
+        async function getItemById() {
+            const id = document.getElementById('getById').value;
+            try {
+                const response = await fetch(`${API_BASE}/todoitems/${id}`);
+                if (response.status === 404) {
+                    document.getElementById('getByIdResult').style.display = 'block';
+                    document.getElementById('getByIdResult').innerHTML = `<pre style="color:red;">Not Found (404)</pre>`;
+                    return;
+                }
+                const data = await response.json();
+                document.getElementById('getByIdResult').style.display = 'block';
+                document.getElementById('getByIdResult').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                document.getElementById('getByIdResult').style.display = 'block';
+                document.getElementById('getByIdResult').innerHTML = `<pre style="color:red;">Error: ${error.message}</pre>`;
+            }
+        }
+
+        async function createItem() {
+            const name = document.getElementById('postName').value;
+            const isComplete = document.getElementById('postIsComplete').checked;
+            
+            if (!name) {
+                alert('Please enter a name');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/todoitems`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, isComplete })
+                });
+                const data = await response.json();
+                document.getElementById('postResult').style.display = 'block';
+                document.getElementById('postResult').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                document.getElementById('postName').value = '';
+                document.getElementById('postIsComplete').checked = false;
+                refreshItems();
+            } catch (error) {
+                document.getElementById('postResult').style.display = 'block';
+                document.getElementById('postResult').innerHTML = `<pre style="color:red;">Error: ${error.message}</pre>`;
+            }
+        }
+
+        async function updateItem() {
+            const id = document.getElementById('putId').value;
+            const name = document.getElementById('putName').value;
+            const isComplete = document.getElementById('putIsComplete').checked;
+            
+            if (!name) {
+                alert('Please enter a name');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/todoitems/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, isComplete })
+                });
+                
+                document.getElementById('putResult').style.display = 'block';
+                if (response.status === 204) {
+                    document.getElementById('putResult').innerHTML = `<pre style="color:green;">Success! Item updated (204 No Content)</pre>`;
+                } else if (response.status === 404) {
+                    document.getElementById('putResult').innerHTML = `<pre style="color:red;">Not Found (404)</pre>`;
+                } else {
+                    const data = await response.json();
+                    document.getElementById('putResult').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                }
+                refreshItems();
+            } catch (error) {
+                document.getElementById('putResult').style.display = 'block';
+                document.getElementById('putResult').innerHTML = `<pre style="color:red;">Error: ${error.message}</pre>`;
+            }
+        }
+
+        async function deleteItem() {
+            const id = document.getElementById('deleteId').value;
+            
+            if (!confirm(`Are you sure you want to delete item ${id}?`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/todoitems/${id}`, {
+                    method: 'DELETE'
+                });
+                
+                document.getElementById('deleteResult').style.display = 'block';
+                if (response.status === 204) {
+                    document.getElementById('deleteResult').innerHTML = `<pre style="color:green;">Success! Item deleted (204 No Content)</pre>`;
+                } else if (response.status === 404) {
+                    document.getElementById('deleteResult').innerHTML = `<pre style="color:red;">Not Found (404)</pre>`;
+                }
+                refreshItems();
+            } catch (error) {
+                document.getElementById('deleteResult').style.display = 'block';
+                document.getElementById('deleteResult').innerHTML = `<pre style="color:red;">Error: ${error.message}</pre>`;
+            }
+        }
+
+        async function refreshItems() {
+            try {
+                const response = await fetch(`${API_BASE}/todoitems`);
+                const items = await response.json();
+                const listDiv = document.getElementById('itemsList');
+                
+                if (items.length === 0) {
+                    listDiv.innerHTML = '<p style="color:#999;">No items found</p>';
+                    return;
+                }
+                
+                listDiv.innerHTML = items.map(item => `
+                    <div class="todo-item ${item.isComplete ? 'complete' : ''}">
+                        <div class="todo-info">
+                            <strong>ID: ${item.id}</strong> - ${item.name}
+                            ${item.isComplete ? ' ✓' : ''}
+                        </div>
+                        <div class="todo-actions">
+                            <button onclick="editItem(${item.id}, '${item.name}', ${item.isComplete})">Edit</button>
+                            <button class="delete" onclick="quickDelete(${item.id})">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                document.getElementById('itemsList').innerHTML = `<p style="color:red;">Error loading items: ${error.message}</p>`;
+            }
+        }
+
+        function editItem(id, name, isComplete) {
+            document.getElementById('putId').value = id;
+            document.getElementById('putName').value = name;
+            document.getElementById('putIsComplete').checked = isComplete;
+            document.querySelector('.section:nth-of-type(4)').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function quickDelete(id) {
+            document.getElementById('deleteId').value = id;
+            deleteItem();
+        }
+
+        // Load items on page load
+        window.onload = function() {
+            refreshItems();
+        };
+    </script>
+</body>
+</html>
+

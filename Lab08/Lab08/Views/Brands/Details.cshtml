@@ -1,0 +1,101 @@
+@model Lab08.Models.Brand
+
+@{
+    ViewData["Title"] = "Brand Details";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="card-title mb-0">Brand Details</h4>
+        <p class="card-subtitle">View brand information</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+            <i class="ti ti-edit me-1"></i>Edit
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="ti ti-arrow-left me-1"></i>Back to List
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <h5 class="mb-0 fw-bolder">@Html.DisplayFor(model => model.Name)</h5>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.Description)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Country)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.Country)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.EstablishedYear)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Model.EstablishedYear.ToString("yyyy")</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.CarModels.Any())
+{
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title mb-4">Car Models (@Model.CarModels.Count)</h5>
+            <div class="table-responsive">
+                <table class="table mb-0 text-nowrap varient-table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="px-0">Name</th>
+                            <th scope="col" class="px-0">Year</th>
+                            <th scope="col" class="px-0">Price</th>
+                            <th scope="col" class="px-0">Engine</th>
+                            <th scope="col" class="px-0 text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var carModel in Model.CarModels)
+                        {
+                            <tr>
+                                <td class="px-0">
+                                    <h6 class="mb-0 fw-bolder">@carModel.Name</h6>
+                                </td>
+                                <td class="px-0">
+                                    <span class="text-muted">@carModel.Year</span>
+                                </td>
+                                <td class="px-0">
+                                    <span class="text-muted">$@carModel.Price.ToString("N0")</span>
+                                </td>
+                                <td class="px-0">
+                                    <span class="text-muted">@carModel.Engine</span>
+                                </td>
+                                <td class="px-0 text-end">
+                                    <a asp-controller="CarModels" asp-action="Details" asp-route-id="@carModel.Id" class="btn btn-sm btn-info">
+                                        <i class="ti ti-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

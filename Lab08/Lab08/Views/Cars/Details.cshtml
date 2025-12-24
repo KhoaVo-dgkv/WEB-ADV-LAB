@@ -1,0 +1,115 @@
+@model Lab08.Models.Car
+
+@{
+    ViewData["Title"] = "Car Details";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="card-title mb-0">Car Details</h4>
+        <p class="card-subtitle">View car information</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+            <i class="ti ti-edit me-1"></i>Edit
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="ti ti-arrow-left me-1"></i>Back to List
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.LicensePlate)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <h5 class="mb-0 fw-bolder">@Html.DisplayFor(model => model.LicensePlate)</h5>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        Brand
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.CarModel.Brand.Name)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        Model
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.CarModel.Name)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.VIN)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.VIN)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Color)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.Color)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Mileage)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Model.Mileage.ToString("N0") miles</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.CurrentPrice)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted fw-bolder">$@Model.CurrentPrice.ToString("N0")</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Condition)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        @{
+                            var conditionClass = "bg-info";
+                            if (Model.Condition == "Excellent" || Model.Condition == "New")
+                            {
+                                conditionClass = "bg-warning";
+                            }
+                            else if (Model.Condition == "Good")
+                            {
+                                conditionClass = "text-bg-primary";
+                            }
+                        }
+                        <span class="badge @conditionClass">@Html.DisplayFor(model => model.Condition)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.PurchaseDate)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Model.PurchaseDate.ToString("MM/dd/yyyy")</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        <span class="text-muted">@Html.DisplayFor(model => model.Notes)</span>
+                    </dd>
+                    <dt class="col-sm-3 mb-3">
+                        @Html.DisplayNameFor(model => model.IsAvailable)
+                    </dt>
+                    <dd class="col-sm-9 mb-3">
+                        @if (Model.IsAvailable)
+                        {
+                            <span class="badge bg-success">Available</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Not Available</span>
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

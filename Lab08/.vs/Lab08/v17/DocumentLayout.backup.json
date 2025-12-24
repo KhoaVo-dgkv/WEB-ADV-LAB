@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Lesson\\1. WEBNC\\Lab08\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\controllers\\carmodelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\controllers\\carmodelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\models\\carmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\models\\carmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|d:\\lesson\\1. webnc\\lab08\\lab08\\migrations\\20251218102951_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{372FC577-5DBB-489E-B143-CBD164706CA4}|Lab08\\Lab08.csproj|solutionrelative:lab08\\migrations\\20251218102951_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Lab08\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Lab08\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:46:45.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarsController.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\CarsController.cs",
+              "RelativeDocumentMoniker": "Lab08\\Controllers\\CarsController.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\CarsController.cs",
+              "RelativeToolTip": "Lab08\\Controllers\\CarsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:46:44.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarModelsController.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\CarModelsController.cs",
+              "RelativeDocumentMoniker": "Lab08\\Controllers\\CarModelsController.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\CarModelsController.cs",
+              "RelativeToolTip": "Lab08\\Controllers\\CarModelsController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:46:43.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BrandsController.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\BrandsController.cs",
+              "RelativeDocumentMoniker": "Lab08\\Controllers\\BrandsController.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Controllers\\BrandsController.cs",
+              "RelativeToolTip": "Lab08\\Controllers\\BrandsController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAswGYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:46:37.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20251218102951_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Migrations\\20251218102951_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Lab08\\Migrations\\20251218102951_InitialCreate.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Migrations\\20251218102951_InitialCreate.cs",
+              "RelativeToolTip": "Lab08\\Migrations\\20251218102951_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:29:52.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\appsettings.json",
+              "RelativeDocumentMoniker": "Lab08\\appsettings.json",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\appsettings.json",
+              "RelativeToolTip": "Lab08\\appsettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T10:24:01.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Program.cs",
+              "RelativeDocumentMoniker": "Lab08\\Program.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Program.cs",
+              "RelativeToolTip": "Lab08\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:23:56.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarModel.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\CarModel.cs",
+              "RelativeDocumentMoniker": "Lab08\\Models\\CarModel.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\CarModel.cs",
+              "RelativeToolTip": "Lab08\\Models\\CarModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:05:17.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "Lab08\\Models\\Brand.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\Brand.cs",
+              "RelativeToolTip": "Lab08\\Models\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T09:37:58.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "Lab08\\Models\\Car.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\Car.cs",
+              "RelativeToolTip": "Lab08\\Models\\Car.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T09:34:08.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Lab08\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Lesson\\1. WEBNC\\Lab08\\Lab08\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Lab08\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T09:31:31.105Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 189,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 98,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

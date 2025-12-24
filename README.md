@@ -337,7 +337,9 @@ Repository này được tạo cho mục đích học tập và nghiên cứu.
 - [✅] LAB 4: ASP.NET Core MVC (cont)
 - [✅] LAB 5: Minimal APIs
 - [ ] LAB 6: Controller-based APIs
-- [ ] LAB 7: ASP.NET Core MVC with EF Core
+- [✅] LAB 7: ASP.NET Core MVC with EF Core
+- [✅] LAB 8: ASP.NET Core MVC with EF Core & config from existing UI
+
 
 **Lưu ý:** Đảm bảo commit và push tất cả các lab lên GitHub/GitLab trước khi nộp bài!
 

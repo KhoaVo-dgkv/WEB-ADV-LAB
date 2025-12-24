@@ -1,0 +1,171 @@
+﻿@model Lab08.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!--  Row 1 -->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card w-100">
+            <div class="card-body">
+                <div class="d-md-flex align-items-center">
+                    <div>
+                        <h4 class="card-title">Cars Overview</h4>
+                        <p class="card-subtitle">
+                            Number of cars by brand
+                        </p>
+                    </div>
+                    <div class="ms-auto">
+                        <ul class="list-unstyled mb-0">
+                            <li class="list-inline-item text-primary">
+                                <span class="round-8 text-bg-primary rounded-circle me-1 d-inline-block"></span>
+                                Cars by Brand
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="sales-overview" class="mt-4 mx-n6"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card overflow-hidden">
+            <div class="card-body pb-0">
+                <div class="d-flex align-items-start">
+                    <div>
+                        <h4 class="card-title">Statistics</h4>
+                        <p class="card-subtitle">Overview</p>
+                    </div>
+                </div>
+                <div class="mt-4 pb-3 d-flex align-items-center">
+                    <span class="btn btn-primary rounded-circle round-48 hstack justify-content-center">
+                        <i class="ti ti-brand-apple fs-6"></i>
+                    </span>
+                    <div class="ms-3">
+                        <h5 class="mb-0 fw-bolder fs-4">Total Brands</h5>
+                        <span class="text-muted fs-3">@Model.TotalBrands brands</span>
+                    </div>
+                </div>
+                <div class="py-3 d-flex align-items-center">
+                    <span class="btn btn-warning rounded-circle round-48 hstack justify-content-center">
+                        <i class="ti ti-car fs-6"></i>
+                    </span>
+                    <div class="ms-3">
+                        <h5 class="mb-0 fw-bolder fs-4">Car Models</h5>
+                        <span class="text-muted fs-3">@Model.TotalCarModels models</span>
+                    </div>
+                </div>
+                <div class="py-3 d-flex align-items-center">
+                    <span class="btn btn-success rounded-circle round-48 hstack justify-content-center">
+                        <i class="ti ti-truck fs-6"></i>
+                    </span>
+                    <div class="ms-3">
+                        <h5 class="mb-0 fw-bolder fs-4">Total Cars</h5>
+                        <span class="text-muted fs-3">@Model.TotalCars cars</span>
+                    </div>
+                </div>
+                <div class="pt-3 mb-7 d-flex align-items-center">
+                    <span class="btn btn-info rounded-circle round-48 hstack justify-content-center">
+                        <i class="ti ti-check fs-6"></i>
+                    </span>
+                    <div class="ms-3">
+                        <h5 class="mb-0 fw-bolder fs-4">Available</h5>
+                        <span class="text-muted fs-3">@Model.AvailableCars cars</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-md-flex align-items-center">
+                    <div>
+                        <h4 class="card-title">Cars Performance</h4>
+                        <p class="card-subtitle">
+                            Recent cars in inventory
+                        </p>
+                    </div>
+                </div>
+                <div class="table-responsive mt-4">
+                    <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="px-0 text-muted">
+                                    Assigned
+                                </th>
+                                <th scope="col" class="px-0 text-muted">Name</th>
+                                <th scope="col" class="px-0 text-muted">
+                                    Priority
+                                </th>
+                                <th scope="col" class="px-0 text-muted text-end">
+                                    Price
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var userImages = new[] { "user-1.jpg", "user-2.jpg", "user-3.jpg", "user-4.jpg", "user-5.jpg", "user-6.jpg", "user-7.jpg", "user-8.jpg" };
+                                var userNames = new[] { "John Doe", "Jane Smith", "Mike Johnson", "Sarah Williams", "David Brown", "Emily Davis", "Chris Wilson", "Lisa Anderson" };
+                                var userRoles = new[] { "Manager", "Sales", "Admin", "Technician", "Supervisor", "Coordinator", "Analyst", "Specialist" };
+                                var random = new Random();
+                            }
+                            @foreach (var car in Model.RecentCars)
+                            {
+                                var userIndex = random.Next(0, userImages.Length);
+                                var priorityClass = "bg-info";
+                                var priorityText = "Low";
+                                
+                                if (car.Condition == "Excellent" || car.Condition == "New")
+                                {
+                                    priorityClass = "bg-warning";
+                                    priorityText = "High";
+                                }
+                                else if (car.Condition == "Good")
+                                {
+                                    priorityClass = "text-bg-primary";
+                                    priorityText = "Medium";
+                                }
+                                
+                                <tr>
+                                    <td class="px-0">
+                                        <div class="d-flex align-items-center">
+                                            <img src="~/assets/images/profile/@userImages[userIndex]" class="rounded-circle" width="40"
+                                                alt="user" />
+                                            <div class="ms-3">
+                                                <h6 class="mb-0 fw-bolder">@userNames[userIndex]</h6>
+                                                <span class="text-muted">@userRoles[userIndex]</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-0">@car.CarModel.Brand.Name @car.CarModel.Name</td>
+                                    <td class="px-0">
+                                        <span class="badge @priorityClass">@priorityText</span>
+                                    </td>
+                                    <td class="px-0 text-dark fw-medium text-end">
+                                        $@car.CurrentPrice.ToString("N0")
+                                    </td>
+                                </tr>
+                            }
+                            @if (!Model.RecentCars.Any())
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center text-muted">No cars available</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/assets/js/dashboard-custom.js"></script>
+    <script>
+        // Pass data to JavaScript
+        var brandCarData = @Html.Raw(Json.Serialize(Model.BrandCarCounts.Select(b => new { brand = b.BrandName, count = b.CarCount })));
+    </script>
+}
